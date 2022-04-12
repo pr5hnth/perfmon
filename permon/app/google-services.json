@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "250825792076",
+    "project_id": "perfmon-a4274",
+    "storage_bucket": "perfmon-a4274.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250825792076:android:3e85b406dd310a9aacf2e9",
+        "android_client_info": {
+          "package_name": "com.example.permon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250825792076-4m6k36h5o3folim1scv378lrp11h8fqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDNPLeRKrPXr7Le6E5uMvIencGDYeuaoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250825792076-4m6k36h5o3folim1scv378lrp11h8fqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
