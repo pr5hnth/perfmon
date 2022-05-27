@@ -15,7 +15,6 @@
         android:src="@drawable/ic___svg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"></ImageView>
 
@@ -86,26 +85,13 @@
     </com.google.android.material.textview.MaterialTextView>
 
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/dsk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Disk Usage:"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247">
 
-    </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cpu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CPU Usage:"
+        android:text="CPU Usage: 0 %"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,16 +106,18 @@
         android:id="@+id/ram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RAM Usage:"
+        android:text="RAM Usage: 0 %"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintHorizontal_bias="0.748"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.247">
 
     </com.google.android.material.textview.MaterialTextView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

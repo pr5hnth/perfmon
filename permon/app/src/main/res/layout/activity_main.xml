@@ -34,10 +34,10 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/ar"
         android:layout_width="138dp"
         android:layout_height="128dp"
-        android:text="Scan QR"
+        android:text="AR VIEW"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.827"
@@ -48,7 +48,7 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
+        android:id="@+id/gview"
         android:layout_width="138dp"
         android:layout_height="128dp"
         android:text="Graph View"
@@ -62,7 +62,7 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton3"
+        android:id="@+id/mview"
         android:layout_width="138dp"
         android:layout_height="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,10 +76,10 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton4"
+        android:id="@+id/tv"
         android:layout_width="255dp"
         android:layout_height="65dp"
-        android:text="View In AR"
+        android:text="Ticket Viewer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

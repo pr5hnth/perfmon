@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">permon</string>
+    <string name="title_activity_maps">Map</string>
+    <string-array name="Stats">
+        <item>--Select Parameter--</item>
+        <item>CPU Usage</item>
+        <item>Memory Usage</item>
+    </string-array>
 </resources>

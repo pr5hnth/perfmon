@@ -2,9 +2,12 @@ package com.example.permon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,8 +27,9 @@ import org.json.JSONObject;
 
 public class mon extends AppCompatActivity {
     TextView v1, v2, v3, st;
+    ImageView i1,i2;
+    Button sd,rs;
     RequestQueue queue;
-    ImageView i1;
     String URL = "https://mistatwistapfm.000webhostapp.com/fetch.php";
 
     @Override
@@ -35,8 +39,21 @@ public class mon extends AppCompatActivity {
         v1 = findViewById(R.id.cpu);
         v2 = findViewById(R.id.ram);
         v3 = findViewById(R.id.dsk);
-        st=findViewById(R.id.stat);
-        i1= findViewById(R.id.icn);
+        st = findViewById(R.id.stat);
+        i1 = findViewById(R.id.icn);
+        i2 = findViewById(R.id.imageView);
+        sd = findViewById(R.id.sd);
+        rs = findViewById(R.id.rs);
+
+        i2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mon.this, debug.class));
+            }
+        });
+
+
+
         final Handler handler = new Handler();
         queue = Volley.newRequestQueue(this);
         Runnable runnable = new Runnable() {
@@ -47,22 +64,21 @@ public class mon extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject object=new JSONObject(response);
-                            JSONArray array=object.getJSONArray("result");
-                            for(int i=0;i<array.length();i++) {
-                                JSONObject object1=array.getJSONObject(i);
+                            JSONObject object = new JSONObject(response);
+                            JSONArray array = object.getJSONArray("result");
+                            for (int i = 0; i < array.length(); i++) {
+                                JSONObject object1 = array.getJSONObject(i);
                                 String pc1 = object1.getString("pc1");
                                 String pc2 = object1.getString("pc2");
                                 String stat = object1.getString("stat");
 
-                                if (stat.equals("Online")){
+                                if (stat.equals("Online")) {
                                     i1.setImageResource(R.drawable.ic_location_dot_green);
-                                }
-                                else if(stat.equals("Offline")){
+                                } else if (stat.equals("Offline")) {
                                     i1.setImageResource(R.drawable.ic_location_red);
-                            }
-                                v1.setText("CPU Usage: "+pc1+" %");
-                                v2.setText("RAM Usage: " +pc2+ " %");
+                                }
+                                v1.setText("CPU Usage: " + pc1 + " %");
+                                v2.setText("RAM Usage: " + pc2 + " %");
                                 st.setText(stat);
                             }
                         } catch (JSONException e) {
@@ -72,7 +88,7 @@ public class mon extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("error",error.toString());
+                        Log.d("error", error.toString());
                     }
                 });
 
@@ -81,9 +97,10 @@ public class mon extends AppCompatActivity {
             }
 
 
-    };
+        };
         handler.post(runnable);
-}
+
+    }
 }
 
 
