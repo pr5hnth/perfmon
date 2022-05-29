@@ -3,11 +3,15 @@ package com.example.permon;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.ebanx.swipebtn.OnStateChangeListener;
+import com.ebanx.swipebtn.SwipeButton;
 
 import java.util.HashMap;
 
@@ -27,8 +31,23 @@ public class debug extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s1="SD";
-                UpdateUser();
+
+                SwipeButton swipeButton = (SwipeButton)findViewById(R.id.swipe_btn);
+
+                swipeButton.setVisibility(View.VISIBLE);
+
+                swipeButton.setOnStateChangeListener(new OnStateChangeListener() {
+
+                    @Override
+
+                    public void onStateChange(boolean active) {
+
+                        s1="SD";
+                        UpdateUser();
+
+                    }
+
+                });
                 Toast. makeText(getApplicationContext(),"Shutting Down Server",Toast. LENGTH_SHORT).show();
             }
         });

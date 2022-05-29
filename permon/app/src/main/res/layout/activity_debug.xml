@@ -8,12 +8,13 @@
 
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/materialTextView3"
         android:layout_width="396dp"
         android:layout_height="110dp"
+        android:gravity="center"
         android:text="Server 1 Quick Debug"
         android:textSize="22dp"
         android:textStyle="bold"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
@@ -45,5 +46,44 @@
         app:layout_constraintVertical_bias="0.642">
 
     </com.google.android.material.button.MaterialButton>
+
+    <com.ebanx.swipebtn.SwipeButton
+
+        android:id='@+id/swipe_btn'
+        android:layout_width='314dp'
+        android:layout_height='58dp'
+
+        android:visibility="invisible"
+
+        app:button_background='@drawable/shape_button'
+
+        app:button_bottom_padding='20dp'
+
+        app:button_image_disabled='@drawable/adjust'
+
+        app:button_image_enabled='@drawable/check'
+
+        app:button_left_padding='20dp'
+
+        app:button_right_padding='20dp'
+
+        app:button_top_padding='20dp'
+
+        app:inner_text='Swipe Left'
+
+        app:inner_text_background='@drawable/shape_background'
+
+        app:inner_text_bottom_padding='16dp'
+
+        app:inner_text_color='#000'
+
+        app:inner_text_size='18sp'
+
+        app:inner_text_top_padding='16dp'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
