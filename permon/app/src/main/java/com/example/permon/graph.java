@@ -178,7 +178,7 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
 
 
 
-                data.addEntry(new Entry(set.getEntryCount(), pc2), 0);
+                data.addEntry(new Entry(set.getEntryCount(), pc1), 0);
 
             data.notifyDataChanged();
             // let the chart know it's data has changed

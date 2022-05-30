@@ -28,13 +28,13 @@ def startperfmon():
     while True:
         file = pd.read_csv('C:\\Users\\Hp\\Desktop\\as\\LAPTOP-GLP58E12_20220429-000035\\lp.csv')
         lr = file.iloc[-1].tolist()
-        query="UPDATE perfmon set `date`=%s,`pc1`=TRUNCATE(%s,2),`pc2`=TRUNCATE(%s,2),`stat`= 'Online' where 1"
+        query="UPDATE perfmon set `date`=%s,`pc1`=TRUNCATE(%s,2),`pc2`=TRUNCATE(%s,2),`stat`= 'Online' where id=1"
         mycursor=mydb.cursor()
         mycursor.execute(query,lr)
         mydb.commit()
         cmd()
         if not is_on:
-            query="UPDATE perfmon set `pc1`=0, `pc2`=0, `stat`= 'Offline' where 1"
+            query="UPDATE perfmon set `pc1`=0, `pc2`=0, `stat`= 'Offline' where id=1"
             mycursor=mydb.cursor()
             mycursor.execute(query)
             mydb.commit()
@@ -75,7 +75,7 @@ def cmd():
       for y in x:
          cmd = y;
          if(cmd=="RS"):
-             os.system("shutdown /r /t 0")
+             os.system("shutdown /r /t ")
              print("Rematch Motherfucker")
     mydb.commit()
     
@@ -83,7 +83,7 @@ def cmd():
     
 def doSomething(*args):
     switch()
-    query="UPDATE perfmon set `pc1`=0, `pc2`=0, `stat`= 'Offline' where 1"
+    query="UPDATE perfmon set `pc1`=0, `pc2`=0, `stat`= 'Offline' where id=1"
     mycursor=mydb.cursor()
     mycursor.execute(query)
     mydb.commit()

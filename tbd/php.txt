@@ -1,0 +1,125 @@
+<?php
+define('HOST','bhnliwdehpi4qgqkza9m-mysql.services.clever-cloud.com');
+define('USER','uc32cnli5sf72zz5');
+define('PASS','qulRRKw8dPfS9E4SiEsa');
+define('DB','bhnliwdehpi4qgqkza9m');
+
+$con = mysqli_connect(HOST,USER,PASS,DB);
+$sql="select * from perfmon";
+$res = mysqli_query($con,$sql);
+$result = array();
+while($row = mysqli_fetch_array($res)){
+array_push($result,array('pc1'=>$row[1],
+'pc2'=>$row[2],
+'stat'=>$row[3]
+));
+}
+ 
+echo json_encode(array("result"=>$result));
+ 
+mysqli_close($con);
+ 
+?>
+
+
+<?php header('Access-Control-Allow-Origin: *'); 
+define('HOST','bhnliwdehpi4qgqkza9m-mysql.services.clever-cloud.com');
+define('USER','uc32cnli5sf72zz5');
+define('PASS','qulRRKw8dPfS9E4SiEsa');
+define('DB','bhnliwdehpi4qgqkza9m');
+
+$con = mysqli_connect(HOST,USER,PASS,DB);
+$sql="select * from perfmon";
+$res = mysqli_query($con,$sql);
+$result = array();
+while($row = mysqli_fetch_array($res)){
+array_push($result,array('pc1'=>$row[1],
+'pc2'=>$row[2],
+'stat'=>$row[3]
+));
+}
+ 
+echo json_encode($result);
+ 
+mysqli_close($con);
+ 
+?>
+
+
+
+<!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+   <a-scene embedded arjs='sourceType: webcam;  debugUIEnabled: false;'>
+      
+      <a-camera>
+         <a-marker type='pattern' url='https://mistatwistapfm.000webhostapp.com/qr.patt'>
+      <a-entity
+            rotation="-90 0 0"
+            geometry="primitive: plane; width:1; height:1"
+            material='opacity: .7;' color="white"
+            position="0 0 0.25" ></a-entity>
+      <a-text id="pc1" text="value:PC1 " color="blue" rotation="-90 0 0" align="center"></a-text>
+      <a-text id="pc2" text="value:" color="blue" rotation="-90 0 0" align="center"  position="0 0 0.25"></a-text>
+      <a-text id="stat" text="value:" color="blue" rotation="-90 0 0" align="center" position="0 0 0.5"></a-text>
+   </a-marker>
+      </a-camera>
+   </a-scene>
+   
+   <style>
+   .disclaimer{ 
+    display: none;}
+    .a-enter-vr{ display: none; }
+    </style>
+   
+   <script>
+   setInterval(function(){
+   const xmlhttp = new XMLHttpRequest();
+   xmlhttp.onload = function() 
+  {
+  var myobj = JSON.parse(this.responseText);
+  for (let i = 0; i < myobj.length; i++) 
+  {
+      var pc1 = myobj[i].pc1;
+      var pc2 = myobj[i].pc2;
+      var stat = myobj[i].stat;
+  document.getElementById('pc1').setAttribute('value',pc1);
+  document.getElementById('pc2').setAttribute('value',pc2);
+  document.getElementById('stat').setAttribute('value',stat);
+  }
+  };
+  xmlhttp.open("GET", "https://mistatwistapfm.000webhostapp.com/fetchu.php");
+  xmlhttp.send();
+   },1000);
+   </script>
+</body>
+
+
+<?php
+define('HOST','bhnliwdehpi4qgqkza9m-mysql.services.clever-cloud.com');
+define('USER','uc32cnli5sf72zz5');
+define('PASS','qulRRKw8dPfS9E4SiEsa');
+define('DB','bhnliwdehpi4qgqkza9m');
+
+$con = mysqli_connect(HOST,USER,PASS,DB);
+
+$cmd = $_POST["cmd"];
+
+
+
+$sql = "update perfmon set cmd = '$cmd'";
+
+if(mysqli_query($con,$sql))
+{
+
+echo " Succesfully update";
+
+}
+else
+{
+echo "Try again Later ..." .mysqli_error($con) ;
+
+}
+?>

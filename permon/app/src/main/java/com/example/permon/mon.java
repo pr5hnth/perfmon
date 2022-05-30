@@ -26,9 +26,8 @@ import org.json.JSONObject;
 
 
 public class mon extends AppCompatActivity {
-    TextView v1, v2, v3, st;
-    ImageView i1,i2;
-    Button sd,rs;
+    TextView v1, v2, v3, st,t1,t2,st2;
+    ImageView i1,i2,i3,i4;
     RequestQueue queue;
     String URL = "https://mistatwistapfm.000webhostapp.com/fetch.php";
 
@@ -37,15 +36,26 @@ public class mon extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mon);
         v1 = findViewById(R.id.cpu);
+        t1 = findViewById(R.id.cpu2);
         v2 = findViewById(R.id.ram);
+        t2 = findViewById(R.id.ram2);
         v3 = findViewById(R.id.dsk);
         st = findViewById(R.id.stat);
+        st2 = findViewById(R.id.stat2);
         i1 = findViewById(R.id.icn);
+        i3 = findViewById(R.id.icn2);
         i2 = findViewById(R.id.imageView);
-        sd = findViewById(R.id.sd);
-        rs = findViewById(R.id.rs);
+        i4 = findViewById(R.id.imageView2);
+
 
         i2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mon.this, debug.class));
+            }
+        });
+
+        i4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(mon.this, debug.class));
@@ -71,6 +81,9 @@ public class mon extends AppCompatActivity {
                                 String pc1 = object1.getString("pc1");
                                 String pc2 = object1.getString("pc2");
                                 String stat = object1.getString("stat");
+                                String pc12 = object1.getString("pc1");
+                                String pc22 = object1.getString("pc2");
+                                String stat2 = object1.getString("stat");
 
                                 if (stat.equals("Online")) {
                                     i1.setImageResource(R.drawable.ic_location_dot_green);
@@ -80,6 +93,15 @@ public class mon extends AppCompatActivity {
                                 v1.setText("CPU Usage: " + pc1 + " %");
                                 v2.setText("RAM Usage: " + pc2 + " %");
                                 st.setText(stat);
+
+                                if (stat2.equals("Online")) {
+                                    i3.setImageResource(R.drawable.ic_location_dot_green);
+                                } else if (stat2.equals("Offline")) {
+                                    i3.setImageResource(R.drawable.ic_location_red);
+                                }
+                                t1.setText("CPU Usage: " + pc12 + " %");
+                                t2.setText("RAM Usage: " + pc22 + " %");
+                                st2.setText(stat);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

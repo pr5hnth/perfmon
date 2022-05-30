@@ -44,28 +44,48 @@ public class debug extends AppCompatActivity {
 
                         s1="SD";
                         UpdateUser();
+                        Toast. makeText(getApplicationContext(),"Shutting Down Server",Toast. LENGTH_SHORT).show();
+                        startActivity(new Intent(debug.this, mon.class));
+                        finish();
 
                     }
 
                 });
-                Toast. makeText(getApplicationContext(),"Shutting Down Server",Toast. LENGTH_SHORT).show();
+
             }
         });
 
 
-        
+
 
 
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                s1="RS";
-                Toast. makeText(getApplicationContext(),"Restarting Server",Toast. LENGTH_SHORT).show();
-                UpdateUser();
+                SwipeButton swipeButton = (SwipeButton)findViewById(R.id.swipe_btn);
+
+                swipeButton.setVisibility(View.VISIBLE);
+
+                swipeButton.setOnStateChangeListener(new OnStateChangeListener() {
+
+                    @Override
+
+                    public void onStateChange(boolean active) {
+
+                        s1="RS";
+                        UpdateUser();
+                        Toast. makeText(getApplicationContext(),"Restarting Server",Toast. LENGTH_SHORT).show();
+                        startActivity(new Intent(debug.this, mon.class));
+                        finish();
+
+                    }
+
+                });
 
             }
         });
+
 
 
     }
