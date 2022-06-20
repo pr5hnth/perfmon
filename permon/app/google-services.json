@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "250825792076",
+    "firebase_url": "https://perfmon-a4274-default-rtdb.firebaseio.com",
     "project_id": "perfmon-a4274",
     "storage_bucket": "perfmon-a4274.appspot.com"
   },

@@ -26,7 +26,7 @@ my_label.pack(pady=20)
 
 def startperfmon():
     while True:
-        file = pd.read_csv('C:\\Users\\Hp\\Desktop\\as\\LAPTOP-GLP58E12_20220429-000035\\lp.csv')
+        file = pd.read_csv('C:\\Users\\Hp\\Desktop\\as\\LAPTOP-GLP58E12_20220618-000036\\lp.csv')
         lr = file.iloc[-1].tolist()
         query="UPDATE perfmon set `date`=%s,`pc1`=TRUNCATE(%s,2),`pc2`=TRUNCATE(%s,2),`stat`= 'Online' where id=1"
         mycursor=mydb.cursor()

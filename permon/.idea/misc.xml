@@ -3,14 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1245" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/adjust.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ar.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/bg.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/bruv.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/gview.xml" value="0.2345" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic__.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic___svg.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic_baseline_data_usage_24.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic_download.xml" value="0.1245" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic_download__1_.xml" value="0.1245" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1245" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic_location_dot_green.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/ic_rounded_rectangle_svgrepo_com.xml" value="0.1245" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/mapv.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/micn.xml" value="0.1245" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/mil.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/pbar.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/round.xml" value="0.1245" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/round1.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/serv.xml" value="0.1245" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/shape_background.xml" value="0.2345" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/shape_button.xml" value="0.2345" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/drawable/tkview.xml" value="0.2345" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_debug.xml" value="0.4" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_graph.xml" value="0.19157608695652173" />
-        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_main.xml" value="0.19157608695652173" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_logout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_maps.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_mon.xml" value="0.37166793602437165" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_offline.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/activity_tv.xml" value="0.176" />
         <entry key="..\:/Users/Hp/Desktop/as/permon/app/src/main/res/layout/shape_button.xml" value="0.253125" />
       </map>
     </option>

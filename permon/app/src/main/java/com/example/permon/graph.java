@@ -38,7 +38,7 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
     RequestQueue queue;
     String URL = "https://mistatwistapfm.000webhostapp.com/fetch.php";
     Float pc1, pc2;
-    String s1;
+    int s1;
     Spinner spinner;
 
 
@@ -73,7 +73,7 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
         mChart.setPinchZoom(true);
 
         // set an alternative background color
-        mChart.setBackgroundColor(Color.BLACK);
+        mChart.setBackgroundColor(Color.parseColor("#222325"));
 
         LineData data = new LineData();
         data.setValueTextColor(Color.BLACK);
@@ -126,6 +126,7 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
                                 pc1 = Float.parseFloat(object1.getString("pc1"));
                                 pc2 = Float.parseFloat(object1.getString("pc2"));
                                 addEntry();
+
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -137,7 +138,7 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
                         Log.d("error", error.toString());
                     }
                 });
-
+                createSet();
                 queue.add(request);
                 handler.postDelayed(this, 1000);
             }
@@ -151,7 +152,10 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        s1 = parent.getItemAtPosition(position).toString();
+        s1=spinner.getSelectedItemPosition();
+
+
+
 
 
     }
@@ -176,38 +180,73 @@ public class graph extends AppCompatActivity implements AdapterView.OnItemSelect
                 data.addDataSet(set);
             }
 
-
+            if(s1==1){
 
                 data.addEntry(new Entry(set.getEntryCount(), pc1), 0);
+                data.notifyDataChanged();
+                // let the chart know it's data has changed
+                mChart.notifyDataSetChanged();
 
-            data.notifyDataChanged();
-            // let the chart know it's data has changed
-            mChart.notifyDataSetChanged();
+                // limit the number of visible entries
+                mChart.setVisibleXRangeMaximum(5);
+                // mChart.setVisibleYRange(30, AxisDependency.LEFT);
 
-            // limit the number of visible entries
-            mChart.setVisibleXRangeMaximum(5);
-            // mChart.setVisibleYRange(30, AxisDependency.LEFT);
+                // move to the latest entry
+                mChart.moveViewToX(data.getEntryCount() - 7);
 
-            // move to the latest entry
-            mChart.moveViewToX(data.getEntryCount() - 7);
+            }
+
+            else if(s1==2){
+                data.addEntry(new Entry(set.getEntryCount(), pc2), 0);
+                data.notifyDataChanged();
+                // let the chart know it's data has changed
+                mChart.notifyDataSetChanged();
+
+                // limit the number of visible entries
+                mChart.setVisibleXRangeMaximum(5);
+                // mChart.setVisibleYRange(30, AxisDependency.LEFT);
+
+                // move to the latest entry
+                mChart.moveViewToX(data.getEntryCount() - 7);
+
+            }
+
 
         }
     }
 
     private LineDataSet createSet() {
 
-        LineDataSet set = new LineDataSet(null, "CPU Usage");
+        if(s1==1){
+            LineDataSet set = new LineDataSet(null, "CPU Usage");
+            set.setAxisDependency(YAxis.AxisDependency.LEFT);
+            set.setLineWidth(3f);
+            set.setColor(ColorTemplate.getHoloBlue());
+            set.setHighlightEnabled(true);
+            set.setDrawValues(true);
+            set.setDrawCircles(true);
+            set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+            set.setCubicIntensity(0.2f);
+            return set;
+        }
+
+        else if(s1==2) {
+            LineDataSet set = new LineDataSet(null, "Memory Usage");
+            set.setAxisDependency(YAxis.AxisDependency.LEFT);
+            set.setLineWidth(3f);
+            set.setColor(ColorTemplate.getHoloBlue());
+            set.setHighlightEnabled(true);
+            set.setDrawValues(true);
+            set.setDrawCircles(true);
+            set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+            set.setCubicIntensity(0.2f);
+            return set;
+        }
+
+   return null;
 
 
-        set.setAxisDependency(YAxis.AxisDependency.LEFT);
-        set.setLineWidth(3f);
-        set.setColor(ColorTemplate.getHoloBlue());
-        set.setHighlightEnabled(true);
-        set.setDrawValues(true);
-        set.setDrawCircles(true);
-        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        set.setCubicIntensity(0.2f);
-        return set;
     }
+
 
 }
